@@ -178,7 +178,7 @@ def main():
                 st.session_state.quiz_started = True
                 st.session_state.remaining_time = TOTAL_TIME_LIMIT
                 st.session_state.question_start_time = time.time()
-                st.experimental_rerun()
+                #st.rerun()
         else:
             st.warning("Please enter your details in the sidebar to start the quiz!")
             return
@@ -243,7 +243,7 @@ def main():
         if st.button("Start New Assessment"):
             for key in st.session_state.keys():
                 del st.session_state[key]
-            st.rerun()
+            #st.rerun()
 
     # Display progress bar
     if st.session_state.quiz_started and not st.session_state.quiz_complete:
