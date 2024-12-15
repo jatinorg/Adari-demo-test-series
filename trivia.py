@@ -233,7 +233,7 @@ def main():
         # Submit entire quiz button
         if st.button("Submit Quiz"):
             submit_quiz()
-            st.experimental_rerun()
+            #st.experimental_rerun()
 
     # Display results if quiz is complete
     if st.session_state.quiz_complete:
