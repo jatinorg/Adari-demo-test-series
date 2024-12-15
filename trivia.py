@@ -228,7 +228,7 @@ def main():
                     st.session_state.question_start_time = time.time()
                 else:
                     submit_quiz()
-                st.experimental_rerun()
+                st.rerun()
         
         # Submit entire quiz button
         if st.button("Submit Quiz"):
