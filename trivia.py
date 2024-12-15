@@ -243,7 +243,7 @@ def main():
         if st.button("Start New Assessment"):
             for key in st.session_state.keys():
                 del st.session_state[key]
-            st.experimental_rerun()
+            st.rerun()
 
     # Display progress bar
     if st.session_state.quiz_started and not st.session_state.quiz_complete:
