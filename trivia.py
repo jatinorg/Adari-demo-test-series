@@ -134,7 +134,7 @@ def main():
             animation: blink 1s linear infinite;
         }
         .question-text {
-            background-color: #f0f2f6;
+            background-color: #add8e6;
             padding: 20px;
             border-radius: 5px;
             margin: 10px 0;
@@ -203,7 +203,7 @@ def main():
         # Display current question
         current_q = questions[st.session_state.current_question]
         st.subheader(f"Question {st.session_state.current_question + 1} of {len(questions)}")
-        st.markdown(f"<div class='question-text'>{current_q['question']}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='question-text'>{current_q['question']}", unsafe_allow_html=True)
         
         # Answer options
         answer = st.radio("Select your answer:", current_q["options"], key=f"q_{st.session_state.current_question}")
@@ -211,7 +211,7 @@ def main():
         # Submit answer button or auto-submit on time out
         if st.session_state.remaining_time <= 0:
             submit_quiz()
-            st.experimental_rerun()
+            #st.rerun()
         
         col1, col2, col3 = st.columns([1,1,1])
         with col2:
@@ -228,7 +228,7 @@ def main():
                     st.session_state.question_start_time = time.time()
                 else:
                     submit_quiz()
-                st.rerun()
+                #st.rerun()
         
         # Submit entire quiz button
         if st.button("Submit Quiz"):
